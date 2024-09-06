@@ -14,10 +14,10 @@ export const getRefreshTokenByToken = (token) => {
   });
 };
 
-// export const removeRefreshToken = (token) => {
-//   return prisma.refreshToken.delete({
-//     where: {
-//       token: token,
-//     },
-//   });
-// };
+export const removeRefreshToken = (token) => {
+  return prisma.refreshToken.delete({
+    where: {
+      token: token,
+    },
+  });
+};

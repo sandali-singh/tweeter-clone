@@ -10,6 +10,17 @@ export default {
   ],
   darkMode: "class",
 
+  safelist: [
+    {
+      pattern: /text-(red|green|blue)-(100|400)/,
+      variants: ["group-hover"],
+    },
+    {
+      pattern: /bg-(red|green|blue)-(100|400)/,
+      variants: ["group-hover"],
+    },
+  ],
+
   theme: {
     screens: {
       xs: "614px",

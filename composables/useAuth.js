@@ -101,21 +101,21 @@ export default () => {
     });
   };
 
-  // const logout = () => {
-  //   return new Promise(async (resolve, reject) => {
-  //     try {
-  //       await useFetchApi("/api/auth/logout", {
-  //         method: "POST",
-  //       });
+  const logout = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await useFetchApi("/api/auth/logout", {
+          method: "POST",
+        });
 
-  //       setToken(null);
-  //       setUser(null);
-  //       resolve();
-  //     } catch (error) {
-  //       reject(error);
-  //     }
-  //   });
-  // };
+        setToken(null);
+        setUser(null);
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
+  };
 
   return {
     login,
@@ -123,6 +123,6 @@ export default () => {
     useAuthToken,
     initAuth,
     useAuthLoading,
-    // logout,
+    logout,
   };
 };

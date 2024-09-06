@@ -34,4 +34,9 @@ onBeforeMount(async () => {
     loading.value = false;
   }
 });
+function handleFormSuccess(tweet) {
+  navigateTo({
+    path: `/status/${tweet.id}`,
+  });
+}
 </script>

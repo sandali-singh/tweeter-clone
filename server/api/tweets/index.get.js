@@ -2,41 +2,9 @@ import { getTweets } from "~~/server/db/tweets";
 import { tweetTransformer } from "~~/server/transformers/tweet";
 
 export default defineEventHandler(async (event) => {
-  //   const { query } = useQuery(event);
+  const { query } = useQuery(event);
 
-  //   let primsaQuery = {
-  //     include: {
-  //       author: true,
-  //       mediaFiles: true,
-  //       replies: {
-  //         include: {
-  //           author: true,
-  //         },
-  //       },
-  //       replyTo: {
-  //         include: {
-  //           author: true,
-  //         },
-  //       },
-  //     },
-  //     orderBy: [
-  //       {
-  //         createdAt: "desc",
-  //       },
-  //     ],
-  //   };
-
-  //   if (!!query) {
-  //     primsaQuery = {
-  //       ...primsaQuery,
-  //       where: {
-  //         text: {
-  //           contains: query,
-  //         },
-  //       },
-  //     };
-  //   }
-  const tweets = await getTweets({
+  let primsaQuery = {
     include: {
       author: true,
       mediaFiles: true,
@@ -51,9 +19,42 @@ export default defineEventHandler(async (event) => {
         },
       },
     },
-  });
+    orderBy: [
+      {
+        createdAt: "desc",
+      },
+    ],
+  };
 
-  //   const tweets = await getTweets(primsaQuery);
+  if (!!query) {
+    primsaQuery = {
+      ...primsaQuery,
+      where: {
+        text: {
+          contains: query,
+        },
+      },
+    };
+  }
+
+  // const tweets = await getTweets({
+  //   include: {
+  //     author: true,
+  //     mediaFiles: true,
+  //     replies: {
+  //       include: {
+  //         author: true,
+  //       },
+  //     },
+  //     replyTo: {
+  //       include: {
+  //         author: true,
+  //       },
+  //     },
+  //   },
+  // });
+
+  const tweets = await getTweets(primsaQuery);
 
   return {
     tweets: tweets.map(tweetTransformer),

@@ -71,15 +71,15 @@
         </UIButton>
       </div>
 
-      <!-- <div class="block xl:hidden">
+      <div class="block xl:hidden">
         <UIButton @on-click="emits('onTweet')">
           <div class="w-6 h-6 font-bold">
             <PencilIcon />
           </div>
         </UIButton>
-      </div> -->
+      </div>
     </div>
-    <!-- <div
+    <div
       class="flex flex-row items-center justify-center px-2 py-2 mx-auto mt-auto mb-5 rounded-full cursor-pointer w-14 xl:w-full hover:bg-gray-100 dark:hover:bg-dim-800"
       :class="defaultTransition"
       @click="emits('onLogout')"
@@ -94,15 +94,15 @@
             {{ user.handle }}
           </p>
         </div>
-      </div> -->
+      </div>
 
-    <!-- ICON -->
-    <!-- <div class="hidden ml-auto xl:block">
+      <!-- ICON  -->
+      <div class="hidden ml-auto xl:block">
         <div class="w-6 h-6">
           <ChevronDownIcon />
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 <script setup>
@@ -121,10 +121,10 @@ import {
 const { defaultTransition } = useTailwindConfig();
 const emits = defineEmits(["onTweet", "onLogout"]);
 
-// const props = defineProps({
-//     user: {
-//         type: Object,
-//         required: true
-//     }
-// })
+const props = defineProps({
+  user: {
+    type: Object,
+    required: true,
+  },
+});
 </script>

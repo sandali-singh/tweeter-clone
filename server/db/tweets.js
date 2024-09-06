@@ -1,8 +1,18 @@
 import { prisma } from ".";
 
+// export const createTweet = (tweetData) => {
+//   return prisma.tweet.create({
+//     data: tweetData,
+//   });
+// };
+
 export const createTweet = (tweetData) => {
   return prisma.tweet.create({
-    data: tweetData,
+    data: {
+      text: tweetData.text,
+      authorId: tweetData.authorId,
+      replyToId: tweetData.replyToId ? tweetData.replyToId : null,
+    },
   });
 };
 
