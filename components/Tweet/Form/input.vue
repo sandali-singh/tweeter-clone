@@ -144,10 +144,10 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  //   placeholder: {
-  //       type: String,
-  //       required: true
-  //   }
+  placeholder: {
+    type: String,
+    required: true,
+  },
 });
 
 function handleFormSubmit() {
@@ -165,6 +165,7 @@ function handleImageChange(event) {
   const file = event.target.files[0];
 
   selectedFile.value = file;
+
   const reader = new FileReader();
 
   reader.onload = (event) => {

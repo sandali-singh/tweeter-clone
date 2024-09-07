@@ -9,6 +9,7 @@
     >
       {{ props.title }}
     </h1>
+
     <slot></slot>
 
     <div
