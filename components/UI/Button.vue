@@ -54,6 +54,7 @@ const defaultWidth = computed(() => {
       return "w-min";
   }
 });
+
 const classes = computed(
   () =>
     `${paddingClasses.value} ${props.liquid ? "w-full" : defaultWidth.value}`

@@ -4,7 +4,7 @@ import { decodeRefreshToken, generateTokens } from "../../utils/jwt.js";
 import { getUserById } from "../../db/users.js";
 
 export default defineEventHandler(async (event) => {
-  const cookies = parseCookies(event);
+  const cookies = useCookies(event);
 
   const refreshToken = cookies.refresh_token;
 
@@ -34,6 +34,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const user = await getUserById(token.userId);
+
     const { accessToken } = generateTokens(user);
 
     return { access_token: accessToken };

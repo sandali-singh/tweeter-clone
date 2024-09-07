@@ -37,23 +37,6 @@ export default defineEventHandler(async (event) => {
     };
   }
 
-  // const tweets = await getTweets({
-  //   include: {
-  //     author: true,
-  //     mediaFiles: true,
-  //     replies: {
-  //       include: {
-  //         author: true,
-  //       },
-  //     },
-  //     replyTo: {
-  //       include: {
-  //         author: true,
-  //       },
-  //     },
-  //   },
-  // });
-
   const tweets = await getTweets(primsaQuery);
 
   return {

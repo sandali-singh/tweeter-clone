@@ -4,17 +4,20 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+
+
+
 generator client {
-  provider = "prisma-client-js"
-  
+  provider        = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider             = "mongodb"
+  url                  = env("DATABASE_URL")
+  relationMode         = "prisma"
 
 }
+
 model User {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   email        String
@@ -26,17 +29,16 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-    // Refresh token
+  // Refresh token
   refreshToken RefreshToken[]
 
   // Tweet
   tweet Tweet[]
 
-  
   // MediaFiles
   mediaFiles MediaFile[]
-
 }
+
 model RefreshToken {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   token String @unique
@@ -63,9 +65,10 @@ model Tweet {
   replyTo   Tweet?  @relation("replies", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   replies   Tweet[] @relation("replies")
 
-  // Media Files
+  // MediaFiles
   mediaFiles MediaFile[]
 }
+
 model MediaFile {
   id               String @id @default(auto()) @map("_id") @db.ObjectId
   url              String

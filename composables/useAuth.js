@@ -35,8 +35,9 @@ export default () => {
         setUser(data.user);
 
         resolve(true);
-        console.log(data);
-      } catch (error) {}
+      } catch (error) {
+        reject(error);
+      }
     });
   };
 
@@ -74,6 +75,7 @@ export default () => {
     }
 
     const jwt = jwtDecode(authToken.value);
+
     const newRefreshTime = jwt.exp - 60000;
 
     setTimeout(async () => {

@@ -12,7 +12,6 @@ export default defineEventHandler(async (event) => {
       if (err) {
         reject(err);
       }
-      console.log("Parsed files:", files);
       resolve({ fields, files });
     });
   });
@@ -50,7 +49,9 @@ export default defineEventHandler(async (event) => {
         }
 
         const cloudinaryResource = await uploadToCloudinary(file.filepath);
+
         console.log("Cloudinary response:", cloudinaryResource);
+
         return createMediaFile({
           url: cloudinaryResource.secure_url,
           providerPublicId: cloudinaryResource.public_id,
@@ -70,6 +71,7 @@ export default defineEventHandler(async (event) => {
 
       // Upload to Cloudinary
       const cloudinaryResource = await uploadToCloudinary(file.filepath);
+
       console.log("Cloudinary response:", cloudinaryResource);
 
       // Save file metadata in the database

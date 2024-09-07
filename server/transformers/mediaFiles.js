@@ -1,13 +1,6 @@
-// import { prisma } from ".";
-
-// export const createMediaFile = (mediaFile) => {
-//   return prisma.mediaFile.create({
-//     data: mediaFile,
-//   });
-// };
-export const mediaFileTransformer = (mediaFile) => {
+export const mediaFileTransformer = (mediFile) => {
   return {
-    id: mediaFile.id,
-    url: mediaFile.url,
+    id: mediFile.id,
+    url: mediFile.url,
   };
 };

@@ -10,15 +10,21 @@ export default defineEventHandler(async (event) => {
     "/api/tweets",
     "/api/tweets/:id",
   ];
+
   const isHandledByThisMiddleware = endpoints.some((endopoint) => {
     const pattern = new UrlPattern(endopoint);
+
     return pattern.match(event.req.url);
   });
+
   if (!isHandledByThisMiddleware) {
     return;
   }
+
   const token = event.req.headers["authorization"]?.split(" ")[1];
+
   const decoded = decodeAccessToken(token);
+
   if (!decoded) {
     return sendError(
       event,
@@ -28,9 +34,12 @@ export default defineEventHandler(async (event) => {
       })
     );
   }
+
   try {
     const userId = decoded.userId;
+
     const user = await getUserById(userId);
+
     event.context.auth = { user };
   } catch (error) {
     return;

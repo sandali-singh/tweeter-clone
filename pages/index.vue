@@ -18,9 +18,10 @@ const { twitterBorderColor } = useTailwindConfig();
 const { getTweets } = useTweets();
 
 const loading = ref(false);
-const { useAuthUser } = useAuth();
-const user = useAuthUser();
 const homeTweets = ref([]);
+const { useAuthUser } = useAuth();
+
+const user = useAuthUser();
 
 onBeforeMount(async () => {
   loading.value = true;
@@ -34,6 +35,7 @@ onBeforeMount(async () => {
     loading.value = false;
   }
 });
+
 function handleFormSuccess(tweet) {
   navigateTo({
     path: `/status/${tweet.id}`,

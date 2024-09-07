@@ -32,7 +32,7 @@
 <script setup>
 const { twitterBorderColor } = useTailwindConfig();
 
-// const emitter = useEmitter()
+const emitter = useEmitter();
 
 const props = defineProps({
   tweet: {

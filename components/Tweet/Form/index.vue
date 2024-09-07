@@ -49,8 +49,7 @@ async function handleFormSubmit(data) {
       mediaFiles: data.mediaFiles,
       replyTo: props.replyTo?.id,
     });
-    alert(JSON.stringify(response));
-    console.log(response);
+
     emits("onSuccess", response.tweet);
   } catch (error) {
     console.log(error);
