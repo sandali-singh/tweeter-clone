@@ -6,5 +6,6 @@ export default function useEmitter() {
   return {
     $on: emitter.on,
     $emit: emitter.emit,
+    $off: emitter.off,
   };
 }

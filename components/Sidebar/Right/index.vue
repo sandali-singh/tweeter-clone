@@ -96,6 +96,7 @@
 <script setup>
 import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
 const search = ref("");
+
 const emitter = useEmitter();
 
 function handleSearch() {

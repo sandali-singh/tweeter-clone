@@ -19,10 +19,6 @@ export default defineEventHandler(async (event) => {
   const { fields, files } = response;
   const userId = event.context?.auth?.user?.id;
 
-  // const tweetData = {
-  //   text: fields.text,
-  //   authorId: userId,
-  // };
   const tweetData = {
     text: Array.isArray(fields.text) ? fields.text.join("") : fields.text, // Ensure text is a string
     authorId: userId,
@@ -30,7 +26,8 @@ export default defineEventHandler(async (event) => {
   const replyTo = fields.replyTo;
 
   if (replyTo && replyTo !== "null" && replyTo !== "undefined") {
-    tweetData.replyToId = replyTo;
+    // Ensure replyToId is a single string or null
+    tweetData.replyToId = typeof replyTo === "string" ? replyTo : null;
   } else {
     tweetData.replyToId = null; // Set to null if replyTo is invalid
   }
