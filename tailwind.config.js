@@ -1,13 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue",
-  ],
+  content: [],
+
   darkMode: "class",
 
   safelist: [
@@ -29,6 +23,7 @@ export default {
       lg: "1092px",
       xl: "1280px",
     },
+
     extend: {
       colors: {
         dim: {
@@ -46,5 +41,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms")],
 };
