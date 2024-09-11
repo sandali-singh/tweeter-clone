@@ -1,5 +1,10 @@
-# Nuxt 3 Minimal Starter
 
+
+
+![Screenshot (398)](https://github.com/user-attachments/assets/7d1ec0dc-663b-48ca-9d01-b6034ea3ee4c)
+
+
+# Nuxt 3 Minimal Starter
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
