@@ -131,13 +131,13 @@ const whoToFollowItems = ref([
     image: "https://picsum.photos/200/200",
   },
   {
-    name: "Joe Biden",
-    handle: "@JoeBiden",
+    name: "Raily Den",
+    handle: "@RailyDen",
     image: "https://picsum.photos/200/200",
   },
   {
-    name: "Joe Biden",
-    handle: "@JoeBiden",
+    name: "Tom Hornet",
+    handle: "@TomHornet",
     image: "https://picsum.photos/200/200",
   },
 ]);

@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "prisma generate &&  nuxt prepare",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.22",

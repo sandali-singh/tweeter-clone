@@ -47,7 +47,7 @@
   </div>
 </template>
 <script setup>
-const darkMode = ref(true);
+const darkMode = ref(false);
 const { useAuthUser, initAuth, useAuthLoading, logout } = useAuth();
 const isAuthLoading = useAuthLoading();
 const {
