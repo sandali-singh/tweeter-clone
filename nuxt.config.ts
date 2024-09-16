@@ -12,12 +12,12 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    jwtAccessSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
-    jwtRefreshSecret: process.env.JWT_REFRESH_TOKEN_SECRET,
+    jwtAccessSecret: process.env.NUXT_JWT_ACCESS_TOKEN_SECRET,
+    jwtRefreshSecret: process.env.NUXT_JWT_REFRESH_TOKEN_SECRET,
 
     // Cloudinary
-    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
-    cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET,
+    cloudinaryCloudName: process.env.NUXT_CLOUDINARY_CLOUD_NAME,
+    cloudinaryApiKey: process.env.NUXT_CLOUDINARY_API_KEY,
+    cloudinaryApiSecret: process.env.NUXT_CLOUDINARY_API_SECRET,
   },
 });
